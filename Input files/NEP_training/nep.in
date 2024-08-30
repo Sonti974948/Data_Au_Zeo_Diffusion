@@ -1,0 +1,13 @@
+version 4
+type 3 O Si Au
+cutoff 7.5 7.5
+n_max 8 8 
+basis_size 12 12
+l_max 4 2 0
+lambda_e 0.1
+lambda_f 0.9
+lambda_v 0.0
+neuron 50
+population 50
+batch        1000
+generation   100000

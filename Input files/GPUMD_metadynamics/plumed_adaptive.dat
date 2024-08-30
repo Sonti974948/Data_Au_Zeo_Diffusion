@@ -1,0 +1,22 @@
+# this is required to have proper atom names:
+MOLINFO STRUCTURE=initial_traj.pdb
+
+#Defining the units of the simulations
+UNITS LENGTH=A ENERGY=eV TIME=fs
+
+#Defining Collective variable
+cv: COM ATOMS=73-79
+cv1: COM ATOMS=49-72
+d: DISTANCE ATOMS=cv,cv1
+
+#Metadynamics parameters
+metad: METAD ARG=d SIGMA=20 HEIGHT=0.02 ADAPTIVE=DIFF TEMP=500 PACE=100   
+       
+
+PRINT ARG=d,metad.bias STRIDE=100 FILE=COLVAR 
+
+#PRINT ARG=cv STRIDE=100 FILE=COLVAR
+
+
+
+
